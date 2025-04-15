@@ -1,0 +1,16 @@
+je m'embrouille concernant mon projet. Je veux le scindé en trois voir quatre modules :
+- generateur(fonction pour la date automatique, fonction pour le matricule)
+- saisieUtilisateur(structure du produit nom, prix, quantite, date_peremption, typeProd)
+- calculProg:
+	- fonction ajoutProd:
+		- verifie que la quantite est inferieur au stock(une fonction pour ça)
+		- verifie que l'utilisateur saisit une date valide(fonction pour ça)
+		- verifier que le typeProd existe bien dans la categorie choisit sinon
+		     demander à l'utilisateur de creer ce type ou d'entrer un type existant
+	*si toutes les étapes ont été bien vérifier enregistrer les informations du new
+produit
+	- fonction affichProd:
+		- afficher les informations du nouveau produit(nom prix quantite date_per
+ avec aussi date actuelle(date automatique) et matricule(matricule generer) et aussi la
+categorie) 
+- main.py
