@@ -1,12 +1,13 @@
 import sqlite3
-conn = sqlite3.connect('inventaire.db')
-cursor = conn.cursor()
 def creer_base():
+    conn = sqlite3.connect('inventaire.db')
+    cursor = conn.cursor()
     cursor.execute('''CREATE TABLE IF NOT EXISTS categories
     ( id INTEGER PRIMARY KEY AUTOINCREMENT,
       nom TEXT NOT NULL,
       parent_id INTEGER,
-      FOREIGN KEY (parent_id) REFERENCES categories(id) )
+      FOREIGN KEY (parent_id) REFERENCES categories(id)
+    );
     ''')
 
     cursor.execute(''' CREATE TABLE IF NOT EXISTS produits
@@ -20,5 +21,9 @@ def creer_base():
         date_enregistrement DATETIME DEFAULT CURRENT_TIMESTAMP,
         categorie_id INTEGER,
         FOREIGN KEY (categorie_id) REFERENCES categogies(id)
-    )
+    );
     ''')
+    conn.commit()
+    conn.close()
+    print("base de données créées avec succes")
+creer_base()
