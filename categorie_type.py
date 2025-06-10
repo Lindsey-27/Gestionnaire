@@ -49,9 +49,6 @@ def gerer_categorie():
     return categorie, typeProd
 
 
-
-
-
 def ajoutProd():
     produit = saisi_produit()
     if not verifierStock(produit['quantite']):

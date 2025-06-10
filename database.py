@@ -4,7 +4,8 @@ def creer_base():
     cursor = conn.cursor()
     cursor.execute('''CREATE TABLE IF NOT EXISTS categories
     ( id INTEGER PRIMARY KEY AUTOINCREMENT,
-      nom TEXT NOT NULL,
+      nom TEXT NOT NULL UNIQUE,
+      description TEXT,
       parent_id INTEGER,
       FOREIGN KEY (parent_id) REFERENCES categories(id)
     );
